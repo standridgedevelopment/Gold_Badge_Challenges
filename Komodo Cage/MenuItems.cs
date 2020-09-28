@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Komodo_Cage
+namespace Komodo_Cafe
 {
     public class MenuItem
     {

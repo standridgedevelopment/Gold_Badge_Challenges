@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Komodo_Cage.UI
+namespace Komodo_Cafe.UI
 {
     public class ProgramUI
     {
@@ -20,7 +20,6 @@ namespace Komodo_Cage.UI
             bool continueToRun = true;
             while (continueToRun)
             {
-                mainMenu:
                 Console.Clear();
                 Console.WriteLine("Welcome to Komodo Cafe. Please select a menu item:\n" +
                             "1) Add new menu item \n" +
@@ -41,7 +40,7 @@ namespace Komodo_Cage.UI
                         break;
                     case "3":
                         //Show All Items
-                        //ShowAllItems();
+                        ShowAllItems();
                         break;
 
                     case "4":
@@ -66,11 +65,12 @@ namespace Komodo_Cage.UI
             bool chooseDescription = false;
             bool chooseIngredients = false;
             bool choosePrice = false;
-            bool chooseChanges = false;
+            
             MenuItem item = new MenuItem();
             while (createNewItem == false)
             {
-                chooseChanges = false;
+                bool chooseChanges = false;
+                //chooseChanges = false;
                 while (chooseItemName == false)
                 {
                     Console.Clear();
@@ -93,8 +93,9 @@ namespace Komodo_Cage.UI
                     }
                     catch (Exception)
                     {
+                        Console.Clear();
                         Console.WriteLine("Please enter a valid number.\n" +
-                                    "Press any key to continue");
+                                    "Press any key to continue...");
                         Console.ReadKey();
                         Console.Clear();
                         chooseMealNumber = false;
@@ -123,15 +124,16 @@ namespace Komodo_Cage.UI
                     catch (Exception)
                     {
                         Console.WriteLine("Please enter a valid number.\n" +
-                                    "Press any key to continue");
+                                    "Press any key to continue...");
                         Console.ReadKey();
                         Console.Clear();
                         chooseIngredients = false;
                     }
                     for (int i = 0; i < ingredientNumber; i++)
                     {
-                        Console.WriteLine($"\nPlease enter ingredient {i + 1}");
+                        Console.WriteLine($"Please enter ingredient {i + 1}");
                         item.Ingredients.Add(Console.ReadLine());
+                        Console.WriteLine();
                     }
                     Console.Clear();
                 }
@@ -139,7 +141,7 @@ namespace Komodo_Cage.UI
                 {
                     //Price
                     choosePrice = true;
-                    Console.WriteLine($"Please enter the Price for {item.ItemName}.");
+                    Console.WriteLine($"Please enter the price for {item.ItemName}.");
                     try
                     {
                         item.Price = int.Parse(Console.ReadLine());
@@ -147,8 +149,9 @@ namespace Komodo_Cage.UI
                     }
                     catch (Exception)
                     {
+                        Console.Clear();
                         Console.WriteLine("Please enter a valid number.\n" +
-                                    "Press any key to continue");
+                                    "Press any key to continue...");
                         Console.ReadKey();
                         Console.Clear();
                         choosePrice = false;
@@ -158,47 +161,48 @@ namespace Komodo_Cage.UI
                 while (chooseChanges == false)
                 {
                     chooseChanges = true;
-                    bool continueToRun = true;
+                    //bool chooseYesorNo = false;
                     bool makeChanges = false;
                     Console.WriteLine($"Please review the information for {item.ItemName}\n");
                     item.PrintProperties();
                     Console.WriteLine($"\nDo you want to make any changes before adding {item.ItemName} to the menu?\n1)Yes \n2)No");
                     string changesAnswer = Console.ReadLine().ToLower();
-                    while (continueToRun)
-                    {
+                    
+                    
                         switch (changesAnswer)
                         {
                             case "1":
-                                continueToRun = false;
+                                
                                 makeChanges = true;
                                 break;
                             case "yes":
-                                continueToRun = false;
+                                
                                 makeChanges = true;
                                 break;
                             case "y":
-                                continueToRun = false;
+                                
                                 makeChanges = true;
                                 break;
                             case "2":
-                                continueToRun = false;
+                                
                                 createNewItem = true;
                                 break;
                             case "no":
-                                continueToRun = false;
+                                
                                 createNewItem = true;
                                 break;
                             case "n":
-                                continueToRun = false;
+                                
                                 createNewItem = true;
                                 break;
                             default:
                                 Console.Clear();
-                                Console.WriteLine("Please make a valid selection.");
-                                continueToRun = false;
+                                Console.WriteLine("Invalid selection. \nPress any key to continue...");
+                                Console.ReadKey();
+                               
                                 chooseChanges = false;
                                 break;
-                        }
+                       
                     }
                     Console.Clear();
                     while (makeChanges == true)
@@ -266,7 +270,8 @@ namespace Komodo_Cage.UI
                                 break;
                             default:
                                 Console.Clear();
-                                Console.WriteLine("Please make a valid selection.");
+                                Console.WriteLine("Invalid selection. \nPress any key to continue...");
+                                Console.ReadKey();
                                 makeChanges = true;
                                 break;
                         }
@@ -310,7 +315,7 @@ namespace Komodo_Cage.UI
             {
                 Console.Clear();
                 Console.WriteLine("Please enter a number.\n" +
-                            "Press any key to continue");
+                            "Press any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
                 goto removeItem;
@@ -359,7 +364,9 @@ namespace Komodo_Cage.UI
                         case "n":
                             break;
                         default:
-                            Console.WriteLine("Try again.");
+                            Console.Clear();
+                            Console.WriteLine("Invalid selection. \nPress any key to continue...");
+                            Console.ReadKey();
                             break;
                     }
                 }
@@ -367,6 +374,19 @@ namespace Komodo_Cage.UI
                 Console.ReadKey();
                 
             }
+        }
+        //Show Full Menu
+        public void ShowAllItems()
+        {
+            List<MenuItem> menuList = _fullMenu.GetMenu();
+            int count = 0;
+            foreach (var item in menuList)
+            {
+                count++;
+                Console.WriteLine($"{item.ItemName}");
+            }
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
         }
             public void SeedMenu()
             {

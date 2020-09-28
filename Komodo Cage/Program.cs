@@ -1,11 +1,11 @@
-﻿using Komodo_Cage.UI;
+﻿using Komodo_Cafe.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Komodo_Cage
+namespace Komodo_Cafe
 {
     class Program
     {

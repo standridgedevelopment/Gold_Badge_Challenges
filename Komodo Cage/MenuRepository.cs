@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Komodo_Cage
+namespace Komodo_Cafe
 {
-    class MenuRepository
+    public class MenuRepository
     {
         protected readonly List<MenuItem> _menu = new List<MenuItem>();
 
-        public void AddMenuItem(MenuItem item)
+        public bool AddMenuItem(MenuItem item)
         {
+            int _startingCount = _menu.Count;
             _menu.Add(item);
+            bool wasAdded = (_menu.Count > _startingCount) ? true : false;
+            return wasAdded;
         }
 
         public List<MenuItem> GetMenu()
