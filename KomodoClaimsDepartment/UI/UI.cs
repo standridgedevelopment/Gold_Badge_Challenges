@@ -195,7 +195,7 @@ namespace KomodoClaimsDepartment.UI
         private void SeedClaims()
         {
             var claim1 = new Claims("5", ClaimType.Car, "Car Crash", 500, new DateTime(2020, 9, 15), new DateTime(02020, 09, 25));
-            var claim2 = new Claims("7", ClaimType.Home, "Someone Broke in and stole TV", 5000, new DateTime(2020, 02, 15), new DateTime(2020, 09, 25));
+            var claim2 = new Claims("7", ClaimType.Home, "Someone Broke in and stole TV and killed my dog", 5000, new DateTime(2020, 02, 15), new DateTime(2020, 09, 25));
             var claim3 = new Claims("9", ClaimType.Theft, "Mugged", 20, new DateTime(2020, 3, 15), new DateTime(2020, 04, 15));
             var claim4 = new Claims("3", ClaimType.Car, "Fender Bender", 1000, new DateTime(2020, 8, 15), new DateTime(2020, 09, 25));
             _claims.AddClaimToQueue(claim1);

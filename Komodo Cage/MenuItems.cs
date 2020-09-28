@@ -30,10 +30,15 @@ namespace Komodo_Cafe
             }
             Console.WriteLine($"5. Price: {Price}");
         }
+
+        
        
 
 
-        public MenuItem() { Ingredients = new List<string>();}
+        public MenuItem() 
+        {
+            Ingredients = new List<string>();
+        }
         public MenuItem(string itemName, string description, int price, int mealNumber)
         {
             

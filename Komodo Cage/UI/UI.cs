@@ -129,9 +129,9 @@ namespace Komodo_Cafe.UI
                         Console.Clear();
                         chooseIngredients = false;
                     }
-                    for (int i = 0; i < ingredientNumber; i++)
+                    for (int i = 1; i <= ingredientNumber; i++)
                     {
-                        Console.WriteLine($"Please enter ingredient {i + 1}");
+                        Console.WriteLine($"Please enter ingredient #{i}");
                         item.Ingredients.Add(Console.ReadLine());
                         Console.WriteLine();
                     }
@@ -214,7 +214,7 @@ namespace Komodo_Cafe.UI
                         //5. Price
                         //6. Continue
                         makeChanges = false;
-                        Console.WriteLine($"What property would you like to change? Or select 6 to add {item.ItemName} to the menu.");
+                        Console.WriteLine($"What property would you like to change? Or select 6 to add {item.ItemName} to the menu.\n");
                         item.PrintProperties();
                         Console.WriteLine("6. Continue");
                         string propertyAnswer = Console.ReadLine().ToLower();
