@@ -40,6 +40,11 @@ namespace KomodoClaimsDepartment
             Console.WriteLine($"4. Claim Amount: {ClaimAmount}");
             Console.WriteLine($"5. Date of Incident: {DateOfIncident.ToShortDateString()}");
             Console.WriteLine($"6. Date of Claim: {DateOfClaim.ToShortDateString()}");
+            if (IsValid == true)
+            {
+                Console.WriteLine("This claim is valid");
+            }
+            else Console.WriteLine("This claim is invalid");
 
         }
         public Claims() { }

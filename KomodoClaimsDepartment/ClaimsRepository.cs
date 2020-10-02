@@ -24,5 +24,26 @@ namespace KomodoClaimsDepartment
         {
             return _claimsList;
         }
+        public bool PeekClaim()
+        {
+            Queue<Claims> _currentClaimsList = GetClaims();
+            Claims firstClaim = _currentClaimsList.Peek();
+            firstClaim.printProps();
+            bool wasPeeked = true;
+            return wasPeeked;
+        }
+        public bool DequeueClaim()
+        {
+        Queue<Claims> _currentClaimsList = GetClaims();
+            int initialQueueCount = _claimsList.Count();
+            _claimsList.Dequeue();
+            bool wasRemoved = false;
+            if (initialQueueCount > _claimsList.Count)
+            {
+                wasRemoved = true;
+            }
+            return wasRemoved;
+
+        }
     }
 }

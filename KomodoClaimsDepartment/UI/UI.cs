@@ -37,9 +37,9 @@ namespace KomodoClaimsDepartment.UI
                         EnterNewClaim();
                         break;
                     case "2":
-                        //Remove Menu Item
-                        //RemoveItemFromList();
-                        break;
+                        //Take care of next claim
+                        NextClaim();
+;                        break;
                     case "3":
                         //Show All Items
                         ShowAllClaims();
@@ -64,6 +64,7 @@ namespace KomodoClaimsDepartment.UI
             Console.Clear();
             bool enterNewClaim = false;
             bool chooseClaimId = false;
+            bool chooseTypeOfClaim = false;
             bool chooseDescription = false;
             bool chooseAmount = false;
             bool chooseDateOfAccident = false;
@@ -72,6 +73,7 @@ namespace KomodoClaimsDepartment.UI
             Claims claim = new Claims();
             while (enterNewClaim == false)
             {
+                chooseChanges = false;
                 while (chooseClaimId == false)
                 {
                     //Claim ID
@@ -93,11 +95,43 @@ namespace KomodoClaimsDepartment.UI
                         chooseClaimId = false;
                     }
                 }
+                while (chooseTypeOfClaim == false)
+                {
+                    //Claim ID
+                    chooseTypeOfClaim = true;
+                    Console.WriteLine("What Type of claim is this?\n"+
+                        "1) Car\n" +
+                        "2) Home\n" +
+                        "3) Theft");
+                    string claimTypeChoice = Console.ReadLine();
+                    switch (claimTypeChoice)
+                    {
+                        case "1":
+                            claim.Type = ClaimType.Car;
+                            break;
+                        case "2":
+                            claim.Type = ClaimType.Home;
+                            break;
+                        case "3":
+                            claim.Type = ClaimType.Theft;
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Please enter a valid number.\n" +
+                                 "Press any key to continue...");
+                            Console.ReadKey();
+                            Console.Clear();
+                            chooseTypeOfClaim = false;
+                            break;
+                    }
+                    Console.Clear();
+                }
                 while (chooseDescription == false)
                 {
                     chooseDescription = true;
                     Console.WriteLine("Please enter a description for the claim.");
                     claim.Description = Console.ReadLine();
+                    Console.Clear();
                 }
                 while (chooseAmount == false)
                 {
@@ -143,7 +177,7 @@ namespace KomodoClaimsDepartment.UI
                     Console.WriteLine("Please enter the date of the claim (mm/dd/yyyy)");
                     try
                     {
-                        claim.DateOfIncident = DateTime.Parse(Console.ReadLine());
+                        claim.DateOfClaim = DateTime.Parse(Console.ReadLine());
                         Console.Clear();
                     }
                     catch (Exception)
@@ -153,9 +187,166 @@ namespace KomodoClaimsDepartment.UI
                                     "Press any key to continue...");
                         Console.ReadKey();
                         Console.Clear();
-                        chooseDateOfAccident = false;
+                        chooseDateOfClaim = false;
                     }
                 }
+                //Make changes?
+                while (chooseChanges == false)
+                {
+                    chooseChanges = true;
+                    //bool chooseYesorNo = false;
+                    bool makeChanges = false;
+                    Console.WriteLine($"Please review the information for the new claim\n");
+                    claim.printProps();
+                    Console.WriteLine($"\nDo you want to make any changes before adding the claim to the queue?\n1)Yes \n2)No");
+                    string changesAnswer = Console.ReadLine().ToLower();
+
+
+                    switch (changesAnswer)
+                    {
+                        case "1":
+
+                            makeChanges = true;
+                            break;
+                        case "yes":
+
+                            makeChanges = true;
+                            break;
+                        case "y":
+
+                            makeChanges = true;
+                            break;
+                        case "2":
+
+                            enterNewClaim = true;
+                            break;
+                        case "no":
+
+                            enterNewClaim = true;
+                            break;
+                        case "n":
+
+                            enterNewClaim = true;
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Invalid selection. \nPress any key to continue...");
+                            Console.ReadKey();
+
+                            chooseChanges = false;
+                            break;
+
+                    }
+                    Console.Clear();
+                    while (makeChanges == true)
+                    {
+                        //1. Name
+                        //2. Meal Number
+                        //3. Description
+                        //4. Ingredients
+                        //5. Price
+                        //6. Continue
+                        makeChanges = false;
+                        Console.WriteLine($"What property would you like to change? Or select 6 to add the claim to the menu.\n");
+                        claim.printProps();
+                        Console.WriteLine("7. Continue");
+                        string propertyAnswer = Console.ReadLine().ToLower();
+                        switch (propertyAnswer)
+                        {
+                            case "1":
+                                chooseClaimId = false;
+                                Console.Clear();
+                                break;
+                            case "claimid":
+                                chooseClaimId = false;
+                                Console.Clear();
+                                break;
+                            case "2":
+                                chooseClaimId = false;
+                                Console.Clear();
+                                break;
+                            case "claimtype":
+                                chooseTypeOfClaim = false;
+                                Console.Clear();
+                                break;
+                            case "3":
+                                chooseDescription = false;
+                                Console.Clear();
+                                break;
+                            case "description":
+                                chooseDescription = false;
+                                Console.Clear();
+                                break;
+                            case "4":
+                                chooseAmount = false;
+                                Console.Clear();
+                                break;
+                            case "amount":
+                                chooseAmount = false;
+                                Console.Clear();
+                                break;
+                            case "5":
+                                chooseDateOfAccident = false;
+                                Console.Clear();
+                                break;
+                            case "date of incident":
+                                chooseDateOfAccident = false;
+                                Console.Clear();
+                                break;
+                            case "6":
+                                chooseDateOfClaim = false;
+                                Console.Clear();
+                                break;
+                            case "date of claim":
+                                chooseDateOfClaim = false;
+                                Console.Clear();
+                                break;
+                            case "7":
+                                enterNewClaim = true;
+                                Console.Clear();
+                                break;
+                            case "continue":
+                                enterNewClaim = true;
+                                Console.Clear();
+                                break;
+                            default:
+                                Console.Clear();
+                                Console.WriteLine("Invalid selection. \nPress any key to continue...");
+                                Console.ReadKey();
+                                makeChanges = true;
+                                break;
+                        }
+                    }
+                }
+                if (enterNewClaim == true)
+                {
+                    _claims.AddClaimToQueue(claim);
+                    Console.Clear();
+                    Console.WriteLine($"You have successfully added the claim queue.");
+                    Console.WriteLine("Press any key to return to menu...");
+                    Console.ReadKey();
+                }
+            }
+        }
+        private void NextClaim()
+        {
+            Console.Clear();
+            Console.WriteLine("This is your next claim\n");
+            _claims.PeekClaim();
+            Console.WriteLine();
+            Console.Write("Do you want to deal with this claim now(y/n)?");
+            string dealWithClaim = Console.ReadLine();
+            switch (dealWithClaim)
+            {
+                case "y":
+                    Queue<Claims> currentClaims = _claims.GetClaims();
+                    Console.WriteLine($"\nClaim # {currentClaims.Peek().ClaimID} has been removed from the queue");
+                    _claims.DequeueClaim();
+                    Console.WriteLine("Press any key to return to menu...");
+                    Console.ReadKey();
+                    break;
+                default:
+                    break;
             }
         }
         private void ShowAllClaims()
@@ -190,7 +381,8 @@ namespace KomodoClaimsDepartment.UI
 
             }
             Console.WriteLine();
-            Console.ReadLine();
+            Console.WriteLine("Press any key to return to menu...");
+            Console.ReadKey();
         }
         private void SeedClaims()
         {
