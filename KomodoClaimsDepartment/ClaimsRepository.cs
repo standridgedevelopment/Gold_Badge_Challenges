@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace KomodoClaimsDepartment
 {
-    class ClaimsRepository
+    public class ClaimsRepository
     {
         protected readonly Queue<Claims> _claimsList = new Queue<Claims>();
 

@@ -4,7 +4,6 @@ using System.Data.Entity.Migrations.Builders;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static KomodoClaimsDepartment.TableBuilder;
 
 namespace KomodoClaimsDepartment.UI
 {

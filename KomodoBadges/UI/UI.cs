@@ -39,7 +39,7 @@ namespace KomodoBadges.UI
                         ; break;
                     case "3":
                         //List all Badges
-                        //ListAllBadges();
+                        ListAllBadges();
                         break;
                     case "4":
                         continueToRun = false;
@@ -279,11 +279,11 @@ namespace KomodoBadges.UI
                         while (makeChanges == false)
                         {
                             searchForBadge = true;
-                            Console.WriteLine($"Badge {badgeUpdate} has access to doors:");
+                            Console.WriteLine($"Badge {badgeUpdate} has access to:\n");
                             foreach (var doors in BadgeRepository.BadgeCollection[badgeUpdate])
                             {
                                 int count = 1;
-                                Console.WriteLine($"   {doors}");
+                                Console.WriteLine($"{doors}");
                                 count++;
                             }
                             Console.WriteLine("\nWhat would you like to do?\n" +
@@ -354,9 +354,6 @@ namespace KomodoBadges.UI
                                     makeChanges = true;
                                     updateBadge = true;
                                     Console.Clear();
-                                    Console.WriteLine("Press any key to continue...");
-                                    Console.ReadKey();
-                                    Console.Clear();
                                     break;
                                 default:
                                     Console.WriteLine("\nInvalid selection. \nPress any key to continue...");
@@ -371,9 +368,41 @@ namespace KomodoBadges.UI
                 }
             }
         }
+        void ListAllBadges()
+        {
+
+            Console.WriteLine("Badge #".PadRight(13) + "Door Access");
+            foreach (var badge in BadgeRepository.BadgeCollection)
+            {
+                int count = 1;
+                Console.Write($"{badge.Key}".PadRight(13));
+                foreach (var item in BadgeRepository.BadgeCollection[badge.Key])
+                { 
+                    if (count < BadgeRepository.BadgeCollection[badge.Key].Count)
+                    {
+                        Console.Write($"{item}, ");
+                    }
+                    if (count == BadgeRepository.BadgeCollection[badge.Key].Count)
+                    {
+                        Console.WriteLine($"{item}");
+                    }
+                    count++;
+                }
+            }
+            Console.WriteLine("Press any key to return to menu...");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
         void SeedBadges()
         {
             var newBadge = new Badge(25, new List<string>());
+            newBadge.DoorNames.Add("E25");
+            newBadge.DoorNames.Add("E26");
+            var newBadge2 = new Badge(40, new List<string>());
+            newBadge2.DoorNames.Add("B25");
+            newBadge2.DoorNames.Add("B26");
+
         }
     }
 }
