@@ -230,8 +230,8 @@ namespace KomodoClaimsDepartment.UI
                         default:
                             Console.Clear();
                             Console.WriteLine("Invalid selection. \nPress any key to continue...");
+                            Console.Clear();
                             Console.ReadKey();
-
                             chooseChanges = false;
                             break;
 
@@ -246,7 +246,7 @@ namespace KomodoClaimsDepartment.UI
                         //5. Price
                         //6. Continue
                         makeChanges = false;
-                        Console.WriteLine($"What property would you like to change? Or select 6 to add the claim to the menu.\n");
+                        Console.WriteLine($"What property would you like to change? Or select 7 to add the claim to the menu.\n");
                         claim.printProps();
                         Console.WriteLine("7. Continue");
                         string propertyAnswer = Console.ReadLine().ToLower();
@@ -324,6 +324,7 @@ namespace KomodoClaimsDepartment.UI
                     Console.WriteLine($"You have successfully added the claim queue.");
                     Console.WriteLine("Press any key to return to menu...");
                     Console.ReadKey();
+                    Console.Clear();
                 }
             }
         }

@@ -1,0 +1,13 @@
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\bin\Debug\netcoreapp3.1\KomodoEmails.exe
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\bin\Debug\netcoreapp3.1\KomodoEmails.deps.json
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\bin\Debug\netcoreapp3.1\KomodoEmails.runtimeconfig.json
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\bin\Debug\netcoreapp3.1\KomodoEmails.runtimeconfig.dev.json
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\bin\Debug\netcoreapp3.1\KomodoEmails.dll
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\bin\Debug\netcoreapp3.1\KomodoEmails.pdb
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.AssemblyInfoInputs.cache
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.AssemblyInfo.cs
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.dll
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.pdb
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoEmails\obj\Debug\netcoreapp3.1\KomodoEmails.genruntimeconfig.cache

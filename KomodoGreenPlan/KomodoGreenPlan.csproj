@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D3060D5-E78C-4732-ACDC-EA846EBD41EF}</ProjectGuid>
+    <ProjectGuid>{F2A14D1F-388C-48A9-BA35-8D09836763AA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Komodo_Outings</RootNamespace>
-    <AssemblyName>Komodo Outings</AssemblyName>
+    <RootNamespace>KomodoGreenPlan</RootNamespace>
+    <AssemblyName>KomodoGreenPlan</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OutingMethodRepository.cs" />
-    <Compile Include="OutingClass.cs" />
+    <Compile Include="CarBaseClass.cs" />
+    <Compile Include="CarMethodRepository.cs" />
+    <Compile Include="ElectricCarClass.cs" />
+    <Compile Include="GasCarClass.cs" />
+    <Compile Include="HybridCarClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\UI.cs" />
+    <Compile Include="UI\ProgramUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
