@@ -24,10 +24,10 @@ namespace KomodoGreenPlan.UI
                 Console.WriteLine("Welcome Komodo Green Plan!");
                 Console.WriteLine("What type of car do you want to work with?");
                 Console.WriteLine("Enter the number of the option you'd like to select:\n" +
-                                  "1) Gas \n" +
-                                  "2) Hybrid \n" +
-                                  "3) Electric\n" +
-                                  "4) Exit");
+                                  "1. Gas \n" +
+                                  "2. Hybrid \n" +
+                                  "3. Electric\n" +
+                                  "4. Exit");
                 string userInput = Console.ReadLine();
                 switch (userInput)
                 {

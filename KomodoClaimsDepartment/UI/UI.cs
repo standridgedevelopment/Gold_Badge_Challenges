@@ -23,10 +23,10 @@ namespace KomodoClaimsDepartment.UI
             {
                 Console.Clear();
                 Console.WriteLine("Welcome to Komodo Claims Department. Please select a menu item:\n" +
-                            "1) Enter new claim \n" +
-                            "2) Handle next claim\n" +
-                            "3) Show all claims \n" +
-                            "4) Exit)");
+                            "1. Enter New Claim \n" +
+                            "2. Handle Next Claim\n" +
+                            "3. Show All Claims \n" +
+                            "4. Exit");
 
                 string userInput = Console.ReadLine();
                 switch (userInput)

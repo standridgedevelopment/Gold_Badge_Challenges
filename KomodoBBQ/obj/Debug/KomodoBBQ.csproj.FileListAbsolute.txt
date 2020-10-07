@@ -1,0 +1,7 @@
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\bin\Debug\KomodoBBQ.exe.config
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\bin\Debug\KomodoBBQ.exe
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\bin\Debug\KomodoBBQ.pdb
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\obj\Debug\KomodoBBQ.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\obj\Debug\KomodoBBQ.exe
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\obj\Debug\KomodoBBQ.pdb
+C:\ElevenFiftyProjects\SD 65\Gold_Badge_Challenges\KomodoBBQ\obj\Debug\KomodoBBQ.csprojAssemblyReference.cache

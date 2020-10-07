@@ -22,10 +22,10 @@ namespace Komodo_Outings.UI
             {
                 Console.Clear();
                 Console.WriteLine("Welcome to Komodo Outings. Please select a menu item:\n" +
-                            "1) See all outings \n" +
-                            "2) Add new outing\n" +
-                            "3) Calculations \n" +
-                            "4) Exit");
+                            "1. See All Outings \n" +
+                            "2. Add New Outing\n" +
+                            "3. Calculations \n" +
+                            "4. Exit");
 
                 string userInput = Console.ReadLine();
                 switch (userInput)

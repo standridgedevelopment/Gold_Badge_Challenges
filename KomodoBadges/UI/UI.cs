@@ -21,10 +21,10 @@ namespace KomodoBadges.UI
             {
                 Console.Clear();
                 Console.WriteLine("Welcome to Komodo Insurance Door Program. Please select a menu item:\n" +
-                            "1) Create a badge  \n" +
-                            "2) Edit a badge\n" +
-                            "3) List all badges \n" +
-                            "4) Exit)");
+                            "1. Create Badge  \n" +
+                            "2. Edit Badge\n" +
+                            "3. List All Badges \n" +
+                            "4. Exit");
 
                 string userInput = Console.ReadLine();
                 switch (userInput)

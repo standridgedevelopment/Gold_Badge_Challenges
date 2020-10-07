@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace KomodoBBQ
 {
-    public interface Party { }
-    public class Booths : Party
+    public class Booths
     {
         public int HowManyVeggieburgers;
         public int HowManyHamburgers;
@@ -20,58 +19,116 @@ namespace KomodoBBQ
             }
         }
 
-        public double VeggieburgerCost
+        public decimal VeggieburgerCost
         {
             get
             {
-                return HowManyVeggieburgers * 4;
+                return HowManyVeggieburgers * 4.00m;
             }
         }
-        public double HamburgerCost
+        public decimal HamburgerCost
         {
             get
             {
-                return HowManyHamburgers * 3;
+                return HowManyHamburgers * 3.00m;
             }
         }
-        public double HotDogCost
+        public decimal HotDogCost
         {
             get
             {
-                return HowManyHotDogs*2;
+                return HowManyHotDogs*2.00m;
             }
         }
-        public double MiscBurgerCost
+     
+        public decimal MiscBurgerCost
         {
             get
             {
-                return (HowManyHamburgers + HowmanyHotDogs + HowManyVeggieburgers) * 0.5d;
+                return (HowManyHamburgers + HowManyHotDogs + HowManyVeggieburgers) * 0.50m;
+            }
+        }
+        public decimal BurgerBoothCost
+        {
+            get
+            {
+                return HamburgerCost + HotDogCost + VeggieburgerCost + MiscBurgerCost;
             }
         }
 
         public int HowManyPopcorns;
         public int HowManyIcecream;
+        public int HowManyTreatBoothTickets
+        {
+            get
+            {
+                return HowManyPopcorns + HowManyIcecream;
+            }
+        }
 
-        public double PopCornCost
+        public decimal PopCornCost
         {
             get
             {
-                return HowManyPopcorns * .50d;
+                return HowManyPopcorns * .50m;
             }
         }
-        public double IceCreamCost
+        public decimal IceCreamCost
         {
             get
             {
-                return HowManyIcecream * 0.75d;
+                return HowManyIcecream * 0.75m;
             }
         }
-        public double MiscTreatCost
+        public decimal MiscTreatCost
         {
             get
             {
-                return (HowManyIcecream + HowManyPopcorns) * 0.50d;
+                return (HowManyIcecream + HowManyPopcorns) * 0.50m;
             }
+        }
+        public decimal TreatBoothCost
+        {
+            get
+            {
+                return PopCornCost + IceCreamCost + MiscTreatCost;
+            }
+        }
+
+        public int TotalTickets 
+        { 
+            get
+            {
+                return HowManyTreatBoothTickets + HowManyBurgerBoothTickets;
+            } 
+        }
+        public decimal TotalCost
+        {
+            get
+            {
+                return TreatBoothCost + BurgerBoothCost;
+            }
+        }
+        public DateTime DateOfParty;
+
+        public Booths() { }
+        public Booths(int howManyVeg, int howManyHam, int howManyHot, int howManyPopC, int howManyIceC, DateTime date)
+        {
+            HowManyVeggieburgers = howManyVeg;
+            HowManyHamburgers = howManyHam;
+            HowManyHotDogs = howManyHot;
+            HowManyPopcorns = howManyPopC;
+            HowManyIcecream = howManyIceC;
+            DateOfParty = date;
+        }
+        public void PrintProps()
+        {
+            Console.WriteLine($"1. Date Of Party: {DateOfParty.ToShortDateString()}");
+            Console.WriteLine($"2. Hotdog Tickets: {HowManyHotDogs}");
+            Console.WriteLine($"3. Hamburger Tickets: {HowManyHamburgers}");
+            Console.WriteLine($"4. Veggieburger Tickets: {HowManyVeggieburgers}");
+            Console.WriteLine($"5. Popcorn Tickets: {HowManyPopcorns}");
+            Console.WriteLine($"6. Icecream Tickets: {HowManyIcecream}");
         }
     }
 }

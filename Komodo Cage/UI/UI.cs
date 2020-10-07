@@ -22,10 +22,10 @@ namespace Komodo_Cafe.UI
             {
                 Console.Clear();
                 Console.WriteLine("Welcome to Komodo Cafe. Please select a menu item:\n" +
-                            "1) Add new menu item \n" +
-                            "2) Remove menu item\n" +
-                            "3) Show full menu \n" +
-                            "4) Exit)");
+                            "1. Add New Menu Item \n" +
+                            "2. Remove Menu Item\n" +
+                            "3. Show Full Menu \n" +
+                            "4. Exit");
 
                 string userInput = Console.ReadLine();
                 switch (userInput)
