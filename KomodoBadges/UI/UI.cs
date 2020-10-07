@@ -370,7 +370,7 @@ namespace KomodoBadges.UI
         }
         void ListAllBadges()
         {
-
+            Console.Clear();
             Console.WriteLine("Badge #".PadRight(13) + "Door Access");
             foreach (var badge in BadgeRepository.BadgeCollection)
             {

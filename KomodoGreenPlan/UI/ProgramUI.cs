@@ -25,7 +25,7 @@ namespace KomodoGreenPlan.UI
                 Console.WriteLine("What type of car do you want to work with?");
                 Console.WriteLine("Enter the number of the option you'd like to select:\n" +
                                   "1) Gas \n" +
-                                  "3) Hybrid \n" +
+                                  "2) Hybrid \n" +
                                   "3) Electric\n" +
                                   "4) Exit");
                 string userInput = Console.ReadLine();
@@ -77,6 +77,9 @@ namespace KomodoGreenPlan.UI
                         break;
                     case "2":
                         ListAllGasCars();
+                        Console.WriteLine("Press any key to return to menu...");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "3":
                         UpdateGasCar();
@@ -263,13 +266,12 @@ namespace KomodoGreenPlan.UI
                 Console.WriteLine($"{car.Make}".PadRight(12) + $"{car.Model}".PadRight(12) + $"{car.Year}".PadRight(11) + $"{car.CostToDrivePerYear}".PadRight(21) + $"{car.MPG}");
             }
             Console.WriteLine();
-            Console.WriteLine("Press any key to return to menu...");
-            Console.ReadKey();
-            Console.Clear();
+
         }
         public void UpdateGasCar()
         {
             Console.Clear();
+            ListAllGasCars();
             Console.WriteLine("Please enter the year make and model of the car to update(yyyy make model)");
             string oldcarToUpdate = Console.ReadLine();
             var carToUpdate = new GasCar();
@@ -394,6 +396,7 @@ namespace KomodoGreenPlan.UI
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Could not find that car");
                 Console.WriteLine("Press any key to return to menu...");
                 Console.ReadKey();
@@ -424,6 +427,9 @@ namespace KomodoGreenPlan.UI
                         break;
                     case "2":
                         ListAllElectricCars();
+                        Console.WriteLine("Press any key to return to menu...");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "3":
                         UpdateElectricCar();
@@ -610,9 +616,7 @@ namespace KomodoGreenPlan.UI
                 Console.WriteLine($"{car.Make}".PadRight(12) + $"{car.Model}".PadRight(12) + $"{car.Year}".PadRight(11) + $"{car.CostToDrivePerYear}".PadRight(21) + $"{car.DistancePerCharge}");
             }
             Console.WriteLine();
-            Console.WriteLine("Press any key to return to menu...");
-            Console.ReadKey();
-            Console.Clear();
+
         }
         public void UpdateElectricCar()
         {
@@ -714,6 +718,7 @@ namespace KomodoGreenPlan.UI
             }
             if (carToUpdate == null)
             {
+                Console.Clear();
                 Console.WriteLine("Could not find that car");
                 Console.WriteLine("Press any key to return to menu...");
                 Console.ReadKey();
@@ -724,7 +729,6 @@ namespace KomodoGreenPlan.UI
         {
             Console.Clear();
             ListAllElectricCars();
-            Console.WriteLine();
             Console.WriteLine("Enter the full year, make, and model of the car to delete.");
             string nameToDelete = Console.ReadLine();
             Car deleteThis = _cars.GetGasCarByTitle(nameToDelete);
@@ -740,6 +744,7 @@ namespace KomodoGreenPlan.UI
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Could not find that car");
                 Console.WriteLine("Press any key to return to menu...");
                 Console.ReadKey();
@@ -769,6 +774,9 @@ namespace KomodoGreenPlan.UI
                         break;
                     case "2":
                         ListAllHybridCars();
+                        Console.WriteLine("Press any key to return to menu...");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "3":
                         UpdateHybridCar();
@@ -978,13 +986,12 @@ namespace KomodoGreenPlan.UI
                 Console.WriteLine($"{car.Make}".PadRight(12) + $"{car.Model}".PadRight(12) + $"{car.Year}".PadRight(11) + $"{car.CostToDrivePerYear}".PadRight(21) + $"{car.MPG}".PadRight(12) + $"{car.DistancePerCharge}");
             }
             Console.WriteLine();
-            Console.WriteLine("Press any key to return to menu...");
-            Console.ReadKey();
-            Console.Clear();
+            
         }
         public void UpdateHybridCar()
         {
             Console.Clear();
+            ListAllHybridCars();
             Console.WriteLine("Please enter the year make and model of the car to update(yyyy make model)");
             string oldcarToUpdate = Console.ReadLine();
             var carToUpdate = new HybridCar();
@@ -1102,6 +1109,7 @@ namespace KomodoGreenPlan.UI
             }
             if (carToUpdate == null)
             {
+                Console.Clear();
                 Console.WriteLine("Could not find that car");
                 Console.WriteLine("Press any key to return to menu...");
                 Console.ReadKey();
@@ -1114,7 +1122,7 @@ namespace KomodoGreenPlan.UI
             ListAllHybridCars();
             Console.WriteLine("Enter the full year, make, and model of the car to delete.");
             string nameToDelete = Console.ReadLine();
-            Car deleteThis = _cars.GetElectricCarByTitle(nameToDelete);
+            Car deleteThis = _cars.GetHybridCarByTitle(nameToDelete);
             if (deleteThis != null)
             {
                 _cars.DeleteCar(deleteThis);
@@ -1127,6 +1135,7 @@ namespace KomodoGreenPlan.UI
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Could not find that car");
                 Console.WriteLine("Press any key to return to menu...");
                 Console.ReadKey();
